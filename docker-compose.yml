@@ -1,0 +1,11 @@
+version: "1"
+services:
+  redis:
+    restart: always
+    image: redis
+    container_name: redis
+  fnbot:
+    restart: always
+    image: fnbot
+    build: ./src/
+    container_name: fnbot

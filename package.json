@@ -1,0 +1,33 @@
+{
+  "name": "fortnitegroupbot",
+  "version": "1.0.0",
+  "description": "A Telegram Bot to get, search and track Fortnite Battle Royal players' stats",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcelloGhiozzi/fortnitegroupbot.git"
+  },
+  "keywords": [
+    "Telegram",
+    "Fortnite",
+    "Battle",
+    "Royal",
+    "Track",
+    "Stat"
+  ],
+  "author": "Marcello Ghiozzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcelloGhiozzi/fortnitegroupbot/issues"
+  },
+  "homepage": "https://github.com/MarcelloGhiozzi/fortnitegroupbot#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "redis": "^2.8.0",
+    "request-promise": "^4.2.2",
+    "tgfancy": "^0.13.0"
+  }
+}
