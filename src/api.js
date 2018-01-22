@@ -20,11 +20,13 @@ module.exports = {
       .then(response => {
         let player = JSON.parse(response);
         //player.stats = player.stats.p10 || player.stats.p9 || player.stats.p2 || null
-        player.solo = player.stats.p2 || null
-        player.duo = player.stats.p10 || null
-        player.squad = player.stats.p9 || null
-        player.stats = null;
-        player.recentMatches = player.recentMatches[0] || null
+        if (player.stats){
+          player.solo = player.stats.p2 || null
+          player.duo = player.stats.p10 || null
+          player.squad = player.stats.p9 || null
+          player.stats = null;
+        }
+        player.recentMatches = player.recentMatches? player.recentMatches[0]:null
         player.lifeTimeStats = _.keyBy(player.lifeTimeStats, 'key')
         if (player.error == 'Player Not Found')
           throw new Exceptions.PlayerNotFound();
