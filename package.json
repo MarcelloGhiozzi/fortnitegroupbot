@@ -26,8 +26,12 @@
   "homepage": "https://github.com/MarcelloGhiozzi/fortnitegroupbot#readme",
   "dependencies": {
     "bluebird": "^3.5.1",
+    "flat": "^4.0.0",
+    "lodash": "^4.17.4",
     "redis": "^2.8.0",
+    "redis-jsonify": "^1.0.1",
     "request-promise": "^4.2.2",
+    "string-format": "^0.5.0",
     "tgfancy": "^0.13.0"
   }
 }

@@ -28,7 +28,45 @@ module.exports.TgTokenMissing = class TgTokenMissing extends Error {
     }
 }
 
+module.exports.UserMissing = class UserMissing extends Error {
+    constructor (extra) {
+      super()
+      Error.captureStackTrace( this, this.constructor )
+      this.name = 'UserMissing'
+      this.message = 'You don\'t have a Fortnite player linked to your Telegram Account'
+      if (extra) this.extra = extra
+    }
+}
 
-require('util').inherits(module.exports.InvalidPlatform, Error);
+module.exports.PlayerMissing = class PlayerMissing extends Error {
+    constructor (extra) {
+      super()
+      Error.captureStackTrace( this, this.constructor )
+      this.name = 'PlayerMissing'
+      this.message = 'The player is not in cache'
+      if ( extra ) this.extra = extra
+    }
+}
+
+module.exports.PlayerNotFound = class PlayerNotFound extends Error {
+    constructor (extra) {
+      super()
+      Error.captureStackTrace( this, this.constructor )
+      this.name = 'PlayerNotFound'
+      this.message = 'No Fortnite players with the specified username and platform'
+      if ( extra ) this.extra = extra
+    }
+}
+
+
+//settings
 require('util').inherits(module.exports.TrnApiKeyMissing, Error);
 require('util').inherits(module.exports.TgTokenMissing, Error);
+
+//caching
+require('util').inherits(module.exports.UserMissing, Error);
+require('util').inherits(module.exports.PlayerMissing, Error);
+
+//api
+require('util').inherits(module.exports.PlayerNotFound, Error);
+require('util').inherits(module.exports.InvalidPlatform, Error);
